@@ -8,11 +8,11 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - FEC
-  - Elections
   - Campaign Finance
-  - Government
+  - Elections
+  - FEC
   - Federal
+  - Government
 url: https://raw.githubusercontent.com/api-evangelist/open-fec/refs/heads/main/apis.yml
 created: '2024-03-30'
 modified: '2026-03-16'
@@ -27,8 +27,8 @@ apis:
     humanURL: https://api.open.fec.gov/developers/
     baseURL: https://api.open.fec.gov/v1
     tags:
-      - Elections
       - Campaign Finance
+      - Elections
       - FEC
     properties:
       - type: Documentation
