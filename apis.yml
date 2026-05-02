@@ -15,7 +15,7 @@ tags:
   - Government
 url: https://raw.githubusercontent.com/api-evangelist/open-fec/refs/heads/main/apis.yml
 created: '2024-03-30'
-modified: '2026-03-16'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
   - aid: open-fec:openfec-api
@@ -33,6 +33,8 @@ apis:
     properties:
       - type: Documentation
         url: https://api.open.fec.gov/developers/
+      - type: OpenAPI
+        url: openapi/open-fec-openapi.yml
 common:
   - type: Website
     url: https://www.fec.gov/

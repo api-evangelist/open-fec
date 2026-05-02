@@ -16,7 +16,7 @@ The Federal Election Commission (FEC) API is a RESTful web service supporting fu
 ## Timestamps
 
 - **Created:** 2024-03-30 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
@@ -33,6 +33,7 @@ RESTful web service supporting full-text and field-specific searches on Federal 
 #### Properties
 
 - [Documentation](https://api.open.fec.gov/developers/)
+- [OpenAPI](openapi/open-fec-openapi.yml)
 
 ## Common Properties
 
