@@ -1,0 +1,688 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OpenFEC API
+  description: 'OpenFEC API. 15 operations. Lead operation: Retrieve a single candidate. Self-contained Naftiko capability
+    covering one Open Fec business surface.'
+  tags:
+  - Open Fec
+  - OpenFEC API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OPEN_FEC_API_KEY: OPEN_FEC_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: open-fec
+    baseUri: https://api.open.fec.gov/v1
+    description: OpenFEC API business capability. Self-contained, no shared references.
+    resources:
+    - name: candidate-candidate_id
+      path: /candidate/{candidate_id}
+      operations:
+      - name: getcandidate
+        method: GET
+        description: Retrieve a single candidate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: candidate-candidate_id-committees
+      path: /candidate/{candidate_id}/committees/
+      operations:
+      - name: getcandidatecommittees
+        method: GET
+        description: Committees associated with a candidate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: candidate-candidate_id-totals
+      path: /candidate/{candidate_id}/totals/
+      operations:
+      - name: getcandidatetotals
+        method: GET
+        description: Candidate financial totals
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: cycle
+          in: query
+          type: array
+    - name: candidates
+      path: /candidates/
+      operations:
+      - name: listcandidates
+        method: GET
+        description: List candidates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: q
+          in: query
+          type: string
+          description: Full-text search.
+        - name: candidate_id
+          in: query
+          type: array
+        - name: cycle
+          in: query
+          type: array
+        - name: office
+          in: query
+          type: array
+        - name: state
+          in: query
+          type: string
+        - name: party
+          in: query
+          type: string
+    - name: candidates-search
+      path: /candidates/search/
+      operations:
+      - name: searchcandidates
+        method: GET
+        description: Search candidates with principal committees
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: q
+          in: query
+          type: string
+    - name: committee-committee_id
+      path: /committee/{committee_id}
+      operations:
+      - name: getcommittee
+        method: GET
+        description: Retrieve a single committee
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: committee-committee_id-totals
+      path: /committee/{committee_id}/totals/
+      operations:
+      - name: getcommitteetotals
+        method: GET
+        description: Committee financial totals
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: committees
+      path: /committees/
+      operations:
+      - name: listcommittees
+        method: GET
+        description: List committees
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: q
+          in: query
+          type: string
+        - name: committee_id
+          in: query
+          type: array
+        - name: committee_type
+          in: query
+          type: string
+        - name: cycle
+          in: query
+          type: array
+    - name: elections
+      path: /elections/
+      operations:
+      - name: listelections
+        method: GET
+        description: Election summaries by office, cycle, and district
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: cycle
+          in: query
+          type: integer
+        - name: office
+          in: query
+          type: string
+        - name: state
+          in: query
+          type: string
+        - name: district
+          in: query
+          type: string
+    - name: filings
+      path: /filings/
+      operations:
+      - name: listfilings
+        method: GET
+        description: List filings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: candidate_id
+          in: query
+          type: array
+        - name: committee_id
+          in: query
+          type: array
+        - name: form_type
+          in: query
+          type: array
+    - name: names-candidates
+      path: /names/candidates/
+      operations:
+      - name: candidatenames
+        method: GET
+        description: Candidate name typeahead
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: q
+          in: query
+          type: string
+    - name: names-committees
+      path: /names/committees/
+      operations:
+      - name: committeenames
+        method: GET
+        description: Committee name typeahead
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: q
+          in: query
+          type: string
+    - name: schedules-schedule_a
+      path: /schedules/schedule_a/
+      operations:
+      - name: listschedulea
+        method: GET
+        description: Itemized individual contributions (Schedule A)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: contributor_name
+          in: query
+          type: string
+        - name: committee_id
+          in: query
+          type: array
+        - name: two_year_transaction_period
+          in: query
+          type: integer
+    - name: schedules-schedule_b
+      path: /schedules/schedule_b/
+      operations:
+      - name: listscheduleb
+        method: GET
+        description: Itemized disbursements (Schedule B)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: committee_id
+          in: query
+          type: array
+        - name: recipient_name
+          in: query
+          type: string
+    - name: schedules-schedule_e
+      path: /schedules/schedule_e/
+      operations:
+      - name: listschedulee
+        method: GET
+        description: Independent expenditures (Schedule E)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: candidate_id
+          in: query
+          type: array
+    authentication:
+      type: apikey
+      key: api_key
+      value: '{{env.OPEN_FEC_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: open-fec-rest
+    port: 8080
+    description: REST adapter for OpenFEC API. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/candidate/{candidate-id}
+      name: candidate-candidate-id
+      description: REST surface for candidate-candidate_id.
+      operations:
+      - method: GET
+        name: getcandidate
+        description: Retrieve a single candidate
+        call: open-fec.getcandidate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/candidate/{candidate-id}/committees
+      name: candidate-candidate-id-committees
+      description: REST surface for candidate-candidate_id-committees.
+      operations:
+      - method: GET
+        name: getcandidatecommittees
+        description: Committees associated with a candidate
+        call: open-fec.getcandidatecommittees
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/candidate/{candidate-id}/totals
+      name: candidate-candidate-id-totals
+      description: REST surface for candidate-candidate_id-totals.
+      operations:
+      - method: GET
+        name: getcandidatetotals
+        description: Candidate financial totals
+        call: open-fec.getcandidatetotals
+        with:
+          cycle: rest.cycle
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/candidates
+      name: candidates
+      description: REST surface for candidates.
+      operations:
+      - method: GET
+        name: listcandidates
+        description: List candidates
+        call: open-fec.listcandidates
+        with:
+          q: rest.q
+          candidate_id: rest.candidate_id
+          cycle: rest.cycle
+          office: rest.office
+          state: rest.state
+          party: rest.party
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/candidates/search
+      name: candidates-search
+      description: REST surface for candidates-search.
+      operations:
+      - method: GET
+        name: searchcandidates
+        description: Search candidates with principal committees
+        call: open-fec.searchcandidates
+        with:
+          q: rest.q
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/committee/{committee-id}
+      name: committee-committee-id
+      description: REST surface for committee-committee_id.
+      operations:
+      - method: GET
+        name: getcommittee
+        description: Retrieve a single committee
+        call: open-fec.getcommittee
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/committee/{committee-id}/totals
+      name: committee-committee-id-totals
+      description: REST surface for committee-committee_id-totals.
+      operations:
+      - method: GET
+        name: getcommitteetotals
+        description: Committee financial totals
+        call: open-fec.getcommitteetotals
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/committees
+      name: committees
+      description: REST surface for committees.
+      operations:
+      - method: GET
+        name: listcommittees
+        description: List committees
+        call: open-fec.listcommittees
+        with:
+          q: rest.q
+          committee_id: rest.committee_id
+          committee_type: rest.committee_type
+          cycle: rest.cycle
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/elections
+      name: elections
+      description: REST surface for elections.
+      operations:
+      - method: GET
+        name: listelections
+        description: Election summaries by office, cycle, and district
+        call: open-fec.listelections
+        with:
+          cycle: rest.cycle
+          office: rest.office
+          state: rest.state
+          district: rest.district
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/filings
+      name: filings
+      description: REST surface for filings.
+      operations:
+      - method: GET
+        name: listfilings
+        description: List filings
+        call: open-fec.listfilings
+        with:
+          candidate_id: rest.candidate_id
+          committee_id: rest.committee_id
+          form_type: rest.form_type
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/names/candidates
+      name: names-candidates
+      description: REST surface for names-candidates.
+      operations:
+      - method: GET
+        name: candidatenames
+        description: Candidate name typeahead
+        call: open-fec.candidatenames
+        with:
+          q: rest.q
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/names/committees
+      name: names-committees
+      description: REST surface for names-committees.
+      operations:
+      - method: GET
+        name: committeenames
+        description: Committee name typeahead
+        call: open-fec.committeenames
+        with:
+          q: rest.q
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/schedules/schedule-a
+      name: schedules-schedule-a
+      description: REST surface for schedules-schedule_a.
+      operations:
+      - method: GET
+        name: listschedulea
+        description: Itemized individual contributions (Schedule A)
+        call: open-fec.listschedulea
+        with:
+          contributor_name: rest.contributor_name
+          committee_id: rest.committee_id
+          two_year_transaction_period: rest.two_year_transaction_period
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/schedules/schedule-b
+      name: schedules-schedule-b
+      description: REST surface for schedules-schedule_b.
+      operations:
+      - method: GET
+        name: listscheduleb
+        description: Itemized disbursements (Schedule B)
+        call: open-fec.listscheduleb
+        with:
+          committee_id: rest.committee_id
+          recipient_name: rest.recipient_name
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/schedules/schedule-e
+      name: schedules-schedule-e
+      description: REST surface for schedules-schedule_e.
+      operations:
+      - method: GET
+        name: listschedulee
+        description: Independent expenditures (Schedule E)
+        call: open-fec.listschedulee
+        with:
+          candidate_id: rest.candidate_id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: open-fec-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OpenFEC API. One tool per consumed operation, routed inline through this capability's consumes
+      block.
+    tools:
+    - name: retrieve-single-candidate
+      description: Retrieve a single candidate
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.getcandidate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: committees-associated-candidate
+      description: Committees associated with a candidate
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.getcandidatecommittees
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: candidate-financial-totals
+      description: Candidate financial totals
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.getcandidatetotals
+      with:
+        cycle: tools.cycle
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-candidates
+      description: List candidates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.listcandidates
+      with:
+        q: tools.q
+        candidate_id: tools.candidate_id
+        cycle: tools.cycle
+        office: tools.office
+        state: tools.state
+        party: tools.party
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: search-candidates-principal-committees
+      description: Search candidates with principal committees
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.searchcandidates
+      with:
+        q: tools.q
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: retrieve-single-committee
+      description: Retrieve a single committee
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.getcommittee
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: committee-financial-totals
+      description: Committee financial totals
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.getcommitteetotals
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-committees
+      description: List committees
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.listcommittees
+      with:
+        q: tools.q
+        committee_id: tools.committee_id
+        committee_type: tools.committee_type
+        cycle: tools.cycle
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: election-summaries-office-cycle-and
+      description: Election summaries by office, cycle, and district
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.listelections
+      with:
+        cycle: tools.cycle
+        office: tools.office
+        state: tools.state
+        district: tools.district
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-filings
+      description: List filings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.listfilings
+      with:
+        candidate_id: tools.candidate_id
+        committee_id: tools.committee_id
+        form_type: tools.form_type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: candidate-name-typeahead
+      description: Candidate name typeahead
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.candidatenames
+      with:
+        q: tools.q
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: committee-name-typeahead
+      description: Committee name typeahead
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.committeenames
+      with:
+        q: tools.q
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: itemized-individual-contributions-schedule
+      description: Itemized individual contributions (Schedule A)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.listschedulea
+      with:
+        contributor_name: tools.contributor_name
+        committee_id: tools.committee_id
+        two_year_transaction_period: tools.two_year_transaction_period
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: itemized-disbursements-schedule-b
+      description: Itemized disbursements (Schedule B)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.listscheduleb
+      with:
+        committee_id: tools.committee_id
+        recipient_name: tools.recipient_name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: independent-expenditures-schedule-e
+      description: Independent expenditures (Schedule E)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-fec.listschedulee
+      with:
+        candidate_id: tools.candidate_id
+      outputParameters:
+      - type: object
+        mapping: $.
