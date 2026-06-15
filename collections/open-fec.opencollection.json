@@ -1,0 +1,451 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenFEC API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List candidates",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/candidates/",
+        "params": [
+          {
+            "name": "per_page",
+            "value": "",
+            "type": "query",
+            "description": "Number of results per page."
+          },
+          {
+            "name": "page",
+            "value": "",
+            "type": "query",
+            "description": "Page number to return."
+          },
+          {
+            "name": "q",
+            "value": "",
+            "type": "query",
+            "description": "Full-text search."
+          },
+          {
+            "name": "candidate_id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "cycle",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "office",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "state",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "party",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Fetch basic information about candidates and ability to filter through results."
+    },
+    {
+      "info": {
+        "name": "Search candidates with principal committees",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/candidates/search/",
+        "params": [
+          {
+            "name": "per_page",
+            "value": "",
+            "type": "query",
+            "description": "Number of results per page."
+          },
+          {
+            "name": "page",
+            "value": "",
+            "type": "query",
+            "description": "Page number to return."
+          },
+          {
+            "name": "q",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Search candidates with principal committees"
+    },
+    {
+      "info": {
+        "name": "Retrieve a single candidate",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/candidate/:candidate_id",
+        "params": [
+          {
+            "name": "candidate_id",
+            "value": "",
+            "type": "path",
+            "description": "A candidate identifier (e.g., P00000001)."
+          }
+        ]
+      },
+      "docs": "Retrieve a single candidate"
+    },
+    {
+      "info": {
+        "name": "Candidate financial totals",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/candidate/:candidate_id/totals/",
+        "params": [
+          {
+            "name": "candidate_id",
+            "value": "",
+            "type": "path",
+            "description": "A candidate identifier (e.g., P00000001)."
+          },
+          {
+            "name": "cycle",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Candidate financial totals"
+    },
+    {
+      "info": {
+        "name": "Committees associated with a candidate",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/candidate/:candidate_id/committees/",
+        "params": [
+          {
+            "name": "candidate_id",
+            "value": "",
+            "type": "path",
+            "description": "A candidate identifier (e.g., P00000001)."
+          }
+        ]
+      },
+      "docs": "Committees associated with a candidate"
+    },
+    {
+      "info": {
+        "name": "List committees",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/committees/",
+        "params": [
+          {
+            "name": "per_page",
+            "value": "",
+            "type": "query",
+            "description": "Number of results per page."
+          },
+          {
+            "name": "page",
+            "value": "",
+            "type": "query",
+            "description": "Page number to return."
+          },
+          {
+            "name": "q",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "committee_id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "committee_type",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "cycle",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List committees"
+    },
+    {
+      "info": {
+        "name": "Retrieve a single committee",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/committee/:committee_id",
+        "params": [
+          {
+            "name": "committee_id",
+            "value": "",
+            "type": "path",
+            "description": "A committee identifier (e.g., C00000000)."
+          }
+        ]
+      },
+      "docs": "Retrieve a single committee"
+    },
+    {
+      "info": {
+        "name": "Committee financial totals",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/committee/:committee_id/totals/",
+        "params": [
+          {
+            "name": "committee_id",
+            "value": "",
+            "type": "path",
+            "description": "A committee identifier (e.g., C00000000)."
+          }
+        ]
+      },
+      "docs": "Committee financial totals"
+    },
+    {
+      "info": {
+        "name": "List filings",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/filings/",
+        "params": [
+          {
+            "name": "per_page",
+            "value": "",
+            "type": "query",
+            "description": "Number of results per page."
+          },
+          {
+            "name": "page",
+            "value": "",
+            "type": "query",
+            "description": "Page number to return."
+          },
+          {
+            "name": "candidate_id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "committee_id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "form_type",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Reports filed with the FEC."
+    },
+    {
+      "info": {
+        "name": "Itemized individual contributions (Schedule A)",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/schedules/schedule_a/",
+        "params": [
+          {
+            "name": "per_page",
+            "value": "",
+            "type": "query",
+            "description": "Number of results per page."
+          },
+          {
+            "name": "contributor_name",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "committee_id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "two_year_transaction_period",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Itemized individual contributions (Schedule A)"
+    },
+    {
+      "info": {
+        "name": "Itemized disbursements (Schedule B)",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/schedules/schedule_b/",
+        "params": [
+          {
+            "name": "per_page",
+            "value": "",
+            "type": "query",
+            "description": "Number of results per page."
+          },
+          {
+            "name": "committee_id",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "recipient_name",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Itemized disbursements (Schedule B)"
+    },
+    {
+      "info": {
+        "name": "Independent expenditures (Schedule E)",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/schedules/schedule_e/",
+        "params": [
+          {
+            "name": "per_page",
+            "value": "",
+            "type": "query",
+            "description": "Number of results per page."
+          },
+          {
+            "name": "candidate_id",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Independent expenditures (Schedule E)"
+    },
+    {
+      "info": {
+        "name": "Election summaries by office, cycle, and district",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/elections/",
+        "params": [
+          {
+            "name": "per_page",
+            "value": "",
+            "type": "query",
+            "description": "Number of results per page."
+          },
+          {
+            "name": "cycle",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "office",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "state",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "district",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Election summaries by office, cycle, and district"
+    },
+    {
+      "info": {
+        "name": "Candidate name typeahead",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/names/candidates/",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Candidate name typeahead"
+    },
+    {
+      "info": {
+        "name": "Committee name typeahead",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.open.fec.gov/v1/names/committees/",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Committee name typeahead"
+    }
+  ],
+  "bundled": true
+}

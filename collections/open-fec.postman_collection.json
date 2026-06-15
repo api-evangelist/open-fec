@@ -1,0 +1,1561 @@
+{
+  "item": [
+    {
+      "id": "4efd25d8-70ee-443b-bb0b-8dc774cbde14",
+      "name": "List candidates",
+      "request": {
+        "name": "List candidates",
+        "description": {
+          "content": "Fetch basic information about candidates and ability to filter through results.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "candidates",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "per_page",
+              "value": "20",
+              "description": "Number of results per page."
+            },
+            {
+              "disabled": false,
+              "key": "page",
+              "value": "1",
+              "description": "Page number to return."
+            },
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>",
+              "description": "Full-text search."
+            },
+            {
+              "disabled": false,
+              "key": "candidate_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "candidate_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "cycle",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "cycle",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "office",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "office",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "state",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "party",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "073b4e8a-cf04-4f97-8f8f-c1dfcdc57697",
+          "name": "A page of candidate records.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "candidates",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "20"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "candidate_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "candidate_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "office",
+                  "value": "<string>"
+                },
+                {
+                  "key": "office",
+                  "value": "<string>"
+                },
+                {
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "key": "party",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a53d54d9-c9d1-4a0d-a9fb-6c089a181be6",
+      "name": "Search candidates with principal committees",
+      "request": {
+        "name": "Search candidates with principal committees",
+        "description": {},
+        "url": {
+          "path": [
+            "candidates",
+            "search",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "per_page",
+              "value": "20",
+              "description": "Number of results per page."
+            },
+            {
+              "disabled": false,
+              "key": "page",
+              "value": "1",
+              "description": "Page number to return."
+            },
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "37711103-5603-47b5-afd4-ce0bb5ecdd16",
+          "name": "Candidate search results including committees.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "candidates",
+                "search",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "20"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "560e2029-56a5-4799-b326-5cba9d7dbe09",
+      "name": "Retrieve a single candidate",
+      "request": {
+        "name": "Retrieve a single candidate",
+        "description": {},
+        "url": {
+          "path": [
+            "candidate",
+            ":candidate_id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "candidate_id",
+              "description": "(Required) A candidate identifier (e.g., P00000001)."
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "e7517ab7-70bf-4864-9a8b-99f58ef2850c",
+          "name": "A candidate record.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "candidate",
+                ":candidate_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "candidate_id",
+                  "description": "(Required) A candidate identifier (e.g., P00000001)."
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a16042e4-0632-42b0-99a4-051dca1663af",
+      "name": "Candidate financial totals",
+      "request": {
+        "name": "Candidate financial totals",
+        "description": {},
+        "url": {
+          "path": [
+            "candidate",
+            ":candidate_id",
+            "totals",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "cycle",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "cycle",
+              "value": "<integer>"
+            }
+          ],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "candidate_id",
+              "description": "(Required) A candidate identifier (e.g., P00000001)."
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "8729cebe-884e-4d90-8d75-a22e28278b7c",
+          "name": "Aggregated receipts, disbursements, and cash on hand.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "candidate",
+                ":candidate_id",
+                "totals",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "candidate_id",
+                  "description": "(Required) A candidate identifier (e.g., P00000001)."
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "16f8276f-ecc1-459f-bfae-0c4f04a6b875",
+      "name": "Committees associated with a candidate",
+      "request": {
+        "name": "Committees associated with a candidate",
+        "description": {},
+        "url": {
+          "path": [
+            "candidate",
+            ":candidate_id",
+            "committees",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "candidate_id",
+              "description": "(Required) A candidate identifier (e.g., P00000001)."
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f9737235-4308-4573-b19d-0f439d404710",
+          "name": "Committee records linked to the candidate.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "candidate",
+                ":candidate_id",
+                "committees",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "candidate_id",
+                  "description": "(Required) A candidate identifier (e.g., P00000001)."
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "2496d02b-de83-4b12-8d76-a48d0e23bb04",
+      "name": "List committees",
+      "request": {
+        "name": "List committees",
+        "description": {},
+        "url": {
+          "path": [
+            "committees",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "per_page",
+              "value": "20",
+              "description": "Number of results per page."
+            },
+            {
+              "disabled": false,
+              "key": "page",
+              "value": "1",
+              "description": "Page number to return."
+            },
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "committee_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "committee_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "committee_type",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "cycle",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "cycle",
+              "value": "<integer>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "8cda27e9-682f-4f2f-b5e8-4801053d34cd",
+          "name": "A page of committee records.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "committees",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "20"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "committee_type",
+                  "value": "<string>"
+                },
+                {
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "cce5ea2d-1cb6-4866-94c0-6190fbefc9e6",
+      "name": "Retrieve a single committee",
+      "request": {
+        "name": "Retrieve a single committee",
+        "description": {},
+        "url": {
+          "path": [
+            "committee",
+            ":committee_id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "committee_id",
+              "description": "(Required) A committee identifier (e.g., C00000000)."
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "6a6ca16d-fe8a-4294-a1e2-088d84a1eeff",
+          "name": "A committee record.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "committee",
+                ":committee_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "committee_id",
+                  "description": "(Required) A committee identifier (e.g., C00000000)."
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5894fc69-e55e-4142-9386-43c78f1cda6c",
+      "name": "Committee financial totals",
+      "request": {
+        "name": "Committee financial totals",
+        "description": {},
+        "url": {
+          "path": [
+            "committee",
+            ":committee_id",
+            "totals",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "committee_id",
+              "description": "(Required) A committee identifier (e.g., C00000000)."
+            }
+          ]
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "6f189cf4-7345-4c40-8a9b-0f14504d0f4b",
+          "name": "Aggregated committee finances by cycle.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "committee",
+                ":committee_id",
+                "totals",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "committee_id",
+                  "description": "(Required) A committee identifier (e.g., C00000000)."
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c647a216-0ded-492b-9fb3-08db4b92e5a2",
+      "name": "List filings",
+      "request": {
+        "name": "List filings",
+        "description": {
+          "content": "Reports filed with the FEC.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "filings",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "per_page",
+              "value": "20",
+              "description": "Number of results per page."
+            },
+            {
+              "disabled": false,
+              "key": "page",
+              "value": "1",
+              "description": "Page number to return."
+            },
+            {
+              "disabled": false,
+              "key": "candidate_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "candidate_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "committee_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "committee_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "form_type",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "form_type",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f4b951c4-bd3d-4d0d-8d47-3acd8fc9a7aa",
+          "name": "A page of filings.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "filings",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "20"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "candidate_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "candidate_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "form_type",
+                  "value": "<string>"
+                },
+                {
+                  "key": "form_type",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3519c656-934d-4dc6-889c-d28940b2d637",
+      "name": "Itemized individual contributions (Schedule A)",
+      "request": {
+        "name": "Itemized individual contributions (Schedule A)",
+        "description": {},
+        "url": {
+          "path": [
+            "schedules",
+            "schedule_a",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "per_page",
+              "value": "20",
+              "description": "Number of results per page."
+            },
+            {
+              "disabled": false,
+              "key": "contributor_name",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "committee_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "committee_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "two_year_transaction_period",
+              "value": "<integer>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "9623bf46-8671-40a0-bc04-fca65f4ab8d6",
+          "name": "Schedule A contribution records.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "schedules",
+                "schedule_a",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "20"
+                },
+                {
+                  "key": "contributor_name",
+                  "value": "<string>"
+                },
+                {
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "two_year_transaction_period",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "47bb94fb-d837-4bd2-bb09-597fe08486bd",
+      "name": "Itemized disbursements (Schedule B)",
+      "request": {
+        "name": "Itemized disbursements (Schedule B)",
+        "description": {},
+        "url": {
+          "path": [
+            "schedules",
+            "schedule_b",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "per_page",
+              "value": "20",
+              "description": "Number of results per page."
+            },
+            {
+              "disabled": false,
+              "key": "committee_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "committee_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "recipient_name",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "4595bc3c-9f87-4a42-8e3b-d3308291c478",
+          "name": "Schedule B disbursement records.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "schedules",
+                "schedule_b",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "20"
+                },
+                {
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "recipient_name",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9a2b34aa-8f2c-4d9b-9f0d-4568cd57b413",
+      "name": "Independent expenditures (Schedule E)",
+      "request": {
+        "name": "Independent expenditures (Schedule E)",
+        "description": {},
+        "url": {
+          "path": [
+            "schedules",
+            "schedule_e",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "per_page",
+              "value": "20",
+              "description": "Number of results per page."
+            },
+            {
+              "disabled": false,
+              "key": "candidate_id",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "candidate_id",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "7e612201-e4f8-403b-b1a2-99409501459d",
+          "name": "Schedule E expenditure records.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "schedules",
+                "schedule_e",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "20"
+                },
+                {
+                  "key": "candidate_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "candidate_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "d5bdbeaf-f5e4-46a6-bfd0-abd2b4cfafe6",
+      "name": "Election summaries by office, cycle, and district",
+      "request": {
+        "name": "Election summaries by office, cycle, and district",
+        "description": {},
+        "url": {
+          "path": [
+            "elections",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "per_page",
+              "value": "20",
+              "description": "Number of results per page."
+            },
+            {
+              "disabled": false,
+              "key": "cycle",
+              "value": "<integer>"
+            },
+            {
+              "disabled": false,
+              "key": "office",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "state",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "district",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "35490b31-dd70-4f47-a44b-aeafac688709",
+          "name": "Election summary records.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "elections",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "20"
+                },
+                {
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "office",
+                  "value": "<string>"
+                },
+                {
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "key": "district",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1d53247f-2bad-4386-8acd-320bf991bc18",
+      "name": "Candidate name typeahead",
+      "request": {
+        "name": "Candidate name typeahead",
+        "description": {},
+        "url": {
+          "path": [
+            "names",
+            "candidates",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "d7bfe3ae-add6-405f-a52a-4c78c3ea2c17",
+          "name": "Candidate name suggestions.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "names",
+                "candidates",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "1d8a32ff-1054-4f5f-9954-4f18d5198c81",
+      "name": "Committee name typeahead",
+      "request": {
+        "name": "Committee name typeahead",
+        "description": {},
+        "url": {
+          "path": [
+            "names",
+            "committees",
+            ""
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "b06436bd-7c02-481c-8799-b9886c92bcd3",
+          "name": "Committee name suggestions.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "names",
+                "committees",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "api_key",
+                  "value": "<API Key>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.open.fec.gov/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7b881af0-dcaa-4e8d-9d99-819879523ffc",
+    "name": "OpenFEC API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.\n\nContact Support:\n Name: Federal Election Commission",
+      "type": "text/plain"
+    }
+  }
+}
