@@ -34,6 +34,10 @@ apis:
       - type: OpenAPI
         url: openapi/open-fec-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/open-fec-domain-security.yml
+  - type: Authentication
+    url: authentication/open-fec-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/fecgov
   - type: LinkedIn
