@@ -1,0 +1,54 @@
+openapi: 3.1.0
+info:
+  title: OpenFEC Candidate Names API
+  description: The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.
+  version: '1.0'
+  contact:
+    name: Federal Election Commission
+    url: https://api.open.fec.gov/developers/
+  license:
+    name: Public Domain (CC0)
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+- url: https://api.open.fec.gov/v1
+  description: Production OpenFEC API
+security:
+- apiKey: []
+tags:
+- name: Names
+paths:
+  /names/candidates/:
+    get:
+      summary: Candidate name typeahead
+      operationId: candidateNames
+      parameters:
+      - name: q
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Candidate name suggestions.
+      tags:
+      - Names
+  /names/committees/:
+    get:
+      summary: Committee name typeahead
+      operationId: committeeNames
+      parameters:
+      - name: q
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Committee name suggestions.
+      tags:
+      - Names
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: api.data.gov API key. Use DEMO_KEY for limited testing.

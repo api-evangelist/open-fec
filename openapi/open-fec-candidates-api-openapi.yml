@@ -1,0 +1,106 @@
+openapi: 3.1.0
+info:
+  title: OpenFEC Candidate Candidates API
+  description: The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.
+  version: '1.0'
+  contact:
+    name: Federal Election Commission
+    url: https://api.open.fec.gov/developers/
+  license:
+    name: Public Domain (CC0)
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+- url: https://api.open.fec.gov/v1
+  description: Production OpenFEC API
+security:
+- apiKey: []
+tags:
+- name: Candidates
+paths:
+  /candidates/:
+    get:
+      summary: List candidates
+      description: Fetch basic information about candidates and ability to filter through results.
+      operationId: listCandidates
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/Page'
+      - name: q
+        in: query
+        schema:
+          type: string
+        description: Full-text search.
+      - name: candidate_id
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: cycle
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      - name: office
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - H
+            - S
+            - P
+      - name: state
+        in: query
+        schema:
+          type: string
+      - name: party
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A page of candidate records.
+      tags:
+      - Candidates
+  /candidates/search/:
+    get:
+      summary: Search candidates with principal committees
+      operationId: searchCandidates
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/Page'
+      - name: q
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Candidate search results including committees.
+      tags:
+      - Candidates
+components:
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 100
+      description: Number of results per page.
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      description: Page number to return.
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: api.data.gov API key. Use DEMO_KEY for limited testing.

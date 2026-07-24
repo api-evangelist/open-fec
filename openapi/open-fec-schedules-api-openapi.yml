@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: OpenFEC Candidate Schedules API
+  description: The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.
+  version: '1.0'
+  contact:
+    name: Federal Election Commission
+    url: https://api.open.fec.gov/developers/
+  license:
+    name: Public Domain (CC0)
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+- url: https://api.open.fec.gov/v1
+  description: Production OpenFEC API
+security:
+- apiKey: []
+tags:
+- name: Schedules
+paths:
+  /schedules/schedule_a/:
+    get:
+      summary: Itemized individual contributions (Schedule A)
+      operationId: listScheduleA
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - name: contributor_name
+        in: query
+        schema:
+          type: string
+      - name: committee_id
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: two_year_transaction_period
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Schedule A contribution records.
+      tags:
+      - Schedules
+  /schedules/schedule_b/:
+    get:
+      summary: Itemized disbursements (Schedule B)
+      operationId: listScheduleB
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - name: committee_id
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: recipient_name
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Schedule B disbursement records.
+      tags:
+      - Schedules
+  /schedules/schedule_e/:
+    get:
+      summary: Independent expenditures (Schedule E)
+      operationId: listScheduleE
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - name: candidate_id
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: Schedule E expenditure records.
+      tags:
+      - Schedules
+components:
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 100
+      description: Number of results per page.
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: api.data.gov API key. Use DEMO_KEY for limited testing.

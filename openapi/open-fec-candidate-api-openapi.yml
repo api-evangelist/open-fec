@@ -1,0 +1,73 @@
+openapi: 3.1.0
+info:
+  title: OpenFEC Candidate API
+  description: The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.
+  version: '1.0'
+  contact:
+    name: Federal Election Commission
+    url: https://api.open.fec.gov/developers/
+  license:
+    name: Public Domain (CC0)
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+- url: https://api.open.fec.gov/v1
+  description: Production OpenFEC API
+security:
+- apiKey: []
+tags:
+- name: Candidate
+paths:
+  /candidate/{candidate_id}:
+    get:
+      summary: Retrieve a single candidate
+      operationId: getCandidate
+      parameters:
+      - $ref: '#/components/parameters/CandidateId'
+      responses:
+        '200':
+          description: A candidate record.
+      tags:
+      - Candidate
+  /candidate/{candidate_id}/totals/:
+    get:
+      summary: Candidate financial totals
+      operationId: getCandidateTotals
+      parameters:
+      - $ref: '#/components/parameters/CandidateId'
+      - name: cycle
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+      responses:
+        '200':
+          description: Aggregated receipts, disbursements, and cash on hand.
+      tags:
+      - Candidate
+  /candidate/{candidate_id}/committees/:
+    get:
+      summary: Committees associated with a candidate
+      operationId: getCandidateCommittees
+      parameters:
+      - $ref: '#/components/parameters/CandidateId'
+      responses:
+        '200':
+          description: Committee records linked to the candidate.
+      tags:
+      - Candidate
+components:
+  parameters:
+    CandidateId:
+      name: candidate_id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: A candidate identifier (e.g., P00000001).
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: api.data.gov API key. Use DEMO_KEY for limited testing.
