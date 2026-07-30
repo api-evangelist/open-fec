@@ -5,7 +5,20 @@ description: >-
   FEC data. Bulk downloads are available on the current site. Information is tied to the underlying forms by file ID and
   image ID. Data are updated nightly.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/open-fec.png
 tags:
   - Campaign Finance
   - Elections
@@ -17,22 +30,102 @@ created: '2024-03-30'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: open-fec:openfec-api
-    name: OpenFEC API
-    description: >-
-      RESTful web service supporting full-text and field-specific searches on Federal Election Commission data including
-      candidates, committees, and financial data.
-    humanURL: https://api.open.fec.gov/developers/
-    baseURL: https://api.open.fec.gov/v1
-    tags:
-      - Campaign Finance
-      - Elections
-      - FEC
-    properties:
-      - type: Documentation
-        url: https://api.open.fec.gov/developers/
-      - type: OpenAPI
-        url: openapi/open-fec-openapi.yml
+- aid: open-fec:open-fec-candidate-api
+  name: OpenFEC Candidate API
+  description: The Candidate API from OpenFEC — 3 operation(s) for candidate.
+  humanURL: https://api.open.fec.gov/developers/
+  baseURL: https://api.open.fec.gov/v1
+  tags:
+  - Candidate
+  properties:
+  - type: OpenAPI
+    url: openapi/open-fec-candidate-api-openapi.yml
+  - type: Documentation
+    url: https://api.open.fec.gov/developers/
+- aid: open-fec:open-fec-candidates-api
+  name: OpenFEC Candidates API
+  description: The Candidates API from OpenFEC — 2 operation(s) for candidates.
+  humanURL: https://api.open.fec.gov/developers/
+  baseURL: https://api.open.fec.gov/v1
+  tags:
+  - Candidates
+  properties:
+  - type: OpenAPI
+    url: openapi/open-fec-candidates-api-openapi.yml
+  - type: Documentation
+    url: https://api.open.fec.gov/developers/
+- aid: open-fec:open-fec-committee-api
+  name: OpenFEC Committee API
+  description: The Committee API from OpenFEC — 2 operation(s) for committee.
+  humanURL: https://api.open.fec.gov/developers/
+  baseURL: https://api.open.fec.gov/v1
+  tags:
+  - Committee
+  properties:
+  - type: OpenAPI
+    url: openapi/open-fec-committee-api-openapi.yml
+  - type: Documentation
+    url: https://api.open.fec.gov/developers/
+- aid: open-fec:open-fec-committees-api
+  name: OpenFEC Committees API
+  description: The Committees API from OpenFEC — 1 operation(s) for committees.
+  humanURL: https://api.open.fec.gov/developers/
+  baseURL: https://api.open.fec.gov/v1
+  tags:
+  - Committees
+  properties:
+  - type: OpenAPI
+    url: openapi/open-fec-committees-api-openapi.yml
+  - type: Documentation
+    url: https://api.open.fec.gov/developers/
+- aid: open-fec:open-fec-elections-api
+  name: OpenFEC Elections API
+  description: The Elections API from OpenFEC — 1 operation(s) for elections.
+  humanURL: https://api.open.fec.gov/developers/
+  baseURL: https://api.open.fec.gov/v1
+  tags:
+  - Elections
+  properties:
+  - type: OpenAPI
+    url: openapi/open-fec-elections-api-openapi.yml
+  - type: Documentation
+    url: https://api.open.fec.gov/developers/
+- aid: open-fec:open-fec-filings-api
+  name: OpenFEC Filings API
+  description: The Filings API from OpenFEC — 1 operation(s) for filings.
+  humanURL: https://api.open.fec.gov/developers/
+  baseURL: https://api.open.fec.gov/v1
+  tags:
+  - Filings
+  properties:
+  - type: OpenAPI
+    url: openapi/open-fec-filings-api-openapi.yml
+  - type: Documentation
+    url: https://api.open.fec.gov/developers/
+- aid: open-fec:open-fec-names-api
+  name: OpenFEC Names API
+  description: The Names API from OpenFEC — 2 operation(s) for names.
+  humanURL: https://api.open.fec.gov/developers/
+  baseURL: https://api.open.fec.gov/v1
+  tags:
+  - Names
+  properties:
+  - type: OpenAPI
+    url: openapi/open-fec-names-api-openapi.yml
+  - type: Documentation
+    url: https://api.open.fec.gov/developers/
+- aid: open-fec:open-fec-schedules-api
+  name: OpenFEC Schedules API
+  description: The Schedules API from OpenFEC — 3 operation(s) for schedules.
+  humanURL: https://api.open.fec.gov/developers/
+  baseURL: https://api.open.fec.gov/v1
+  tags:
+  - Schedules
+  properties:
+  - type: OpenAPI
+    url: openapi/open-fec-schedules-api-openapi.yml
+  - type: Documentation
+    url: https://api.open.fec.gov/developers/
 common:
   - type: AgenticAccess
     url: agentic-access/open-fec-agentic-access.yml
