@@ -1,0 +1,331 @@
+openapi: 3.1.0
+info:
+  title: OpenFEC API
+  description: >-
+    The OpenFEC API is a RESTful web service from the Federal Election
+    Commission supporting full-text and field-specific searches on FEC data
+    including candidates, committees, filings, financial summaries, and
+    transaction schedules. Data are updated nightly.
+  version: '1.0'
+  contact:
+    name: Federal Election Commission
+    url: https://api.open.fec.gov/developers/
+  license:
+    name: Public Domain (CC0)
+    url: https://creativecommons.org/publicdomain/zero/1.0/
+servers:
+  - url: https://api.open.fec.gov/v1
+    description: Production OpenFEC API
+security:
+  - apiKey: []
+paths:
+  /candidates/:
+    get:
+      summary: List candidates
+      description: Fetch basic information about candidates and ability to filter through results.
+      operationId: listCandidates
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+        - $ref: '#/components/parameters/Page'
+        - name: q
+          in: query
+          schema:
+            type: string
+          description: Full-text search.
+        - name: candidate_id
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+        - name: cycle
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: office
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+              enum: [H, S, P]
+        - name: state
+          in: query
+          schema:
+            type: string
+        - name: party
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A page of candidate records.
+  /candidates/search/:
+    get:
+      summary: Search candidates with principal committees
+      operationId: searchCandidates
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+        - $ref: '#/components/parameters/Page'
+        - name: q
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Candidate search results including committees.
+  /candidate/{candidate_id}:
+    get:
+      summary: Retrieve a single candidate
+      operationId: getCandidate
+      parameters:
+        - $ref: '#/components/parameters/CandidateId'
+      responses:
+        '200':
+          description: A candidate record.
+  /candidate/{candidate_id}/totals/:
+    get:
+      summary: Candidate financial totals
+      operationId: getCandidateTotals
+      parameters:
+        - $ref: '#/components/parameters/CandidateId'
+        - name: cycle
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        '200':
+          description: Aggregated receipts, disbursements, and cash on hand.
+  /candidate/{candidate_id}/committees/:
+    get:
+      summary: Committees associated with a candidate
+      operationId: getCandidateCommittees
+      parameters:
+        - $ref: '#/components/parameters/CandidateId'
+      responses:
+        '200':
+          description: Committee records linked to the candidate.
+  /committees/:
+    get:
+      summary: List committees
+      operationId: listCommittees
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+        - $ref: '#/components/parameters/Page'
+        - name: q
+          in: query
+          schema:
+            type: string
+        - name: committee_id
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+        - name: committee_type
+          in: query
+          schema:
+            type: string
+        - name: cycle
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
+      responses:
+        '200':
+          description: A page of committee records.
+  /committee/{committee_id}:
+    get:
+      summary: Retrieve a single committee
+      operationId: getCommittee
+      parameters:
+        - $ref: '#/components/parameters/CommitteeId'
+      responses:
+        '200':
+          description: A committee record.
+  /committee/{committee_id}/totals/:
+    get:
+      summary: Committee financial totals
+      operationId: getCommitteeTotals
+      parameters:
+        - $ref: '#/components/parameters/CommitteeId'
+      responses:
+        '200':
+          description: Aggregated committee finances by cycle.
+  /filings/:
+    get:
+      summary: List filings
+      description: Reports filed with the FEC.
+      operationId: listFilings
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+        - $ref: '#/components/parameters/Page'
+        - name: candidate_id
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+        - name: committee_id
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+        - name: form_type
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: A page of filings.
+  /schedules/schedule_a/:
+    get:
+      summary: Itemized individual contributions (Schedule A)
+      operationId: listScheduleA
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+        - name: contributor_name
+          in: query
+          schema:
+            type: string
+        - name: committee_id
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+        - name: two_year_transaction_period
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Schedule A contribution records.
+  /schedules/schedule_b/:
+    get:
+      summary: Itemized disbursements (Schedule B)
+      operationId: listScheduleB
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+        - name: committee_id
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+        - name: recipient_name
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Schedule B disbursement records.
+  /schedules/schedule_e/:
+    get:
+      summary: Independent expenditures (Schedule E)
+      operationId: listScheduleE
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+        - name: candidate_id
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Schedule E expenditure records.
+  /elections/:
+    get:
+      summary: Election summaries by office, cycle, and district
+      operationId: listElections
+      parameters:
+        - $ref: '#/components/parameters/PerPage'
+        - name: cycle
+          in: query
+          schema:
+            type: integer
+        - name: office
+          in: query
+          schema:
+            type: string
+        - name: state
+          in: query
+          schema:
+            type: string
+        - name: district
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Election summary records.
+  /names/candidates/:
+    get:
+      summary: Candidate name typeahead
+      operationId: candidateNames
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Candidate name suggestions.
+  /names/committees/:
+    get:
+      summary: Committee name typeahead
+      operationId: committeeNames
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Committee name suggestions.
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: api.data.gov API key. Use DEMO_KEY for limited testing.
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      schema:
+        type: integer
+        default: 20
+        maximum: 100
+      description: Number of results per page.
+    Page:
+      name: page
+      in: query
+      schema:
+        type: integer
+        default: 1
+      description: Page number to return.
+    CandidateId:
+      name: candidate_id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: A candidate identifier (e.g., P00000001).
+    CommitteeId:
+      name: committee_id
+      in: path
+      required: true
+      schema:
+        type: string
+      description: A committee identifier (e.g., C00000000).

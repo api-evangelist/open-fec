@@ -1,0 +1,28 @@
+{
+  "provider": "open-fec",
+  "sources": [
+    "open-fec-candidate-api-openapi.yml",
+    "open-fec-candidates-api-openapi.yml",
+    "open-fec-committee-api-openapi.yml",
+    "open-fec-committees-api-openapi.yml",
+    "open-fec-elections-api-openapi.yml",
+    "open-fec-filings-api-openapi.yml",
+    "open-fec-names-api-openapi.yml",
+    "open-fec-schedules-api-openapi.yml"
+  ],
+  "outputs": [
+    "open-fec-candidate-api-openapi.yml",
+    "open-fec-candidates-api-openapi.yml",
+    "open-fec-committee-api-openapi.yml",
+    "open-fec-committees-api-openapi.yml",
+    "open-fec-elections-api-openapi.yml",
+    "open-fec-filings-api-openapi.yml",
+    "open-fec-names-api-openapi.yml",
+    "open-fec-schedules-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
