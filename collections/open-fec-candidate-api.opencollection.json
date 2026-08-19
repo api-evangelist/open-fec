@@ -1,0 +1,88 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenFEC Candidate API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Candidate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a single candidate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/candidate/:candidate_id",
+            "params": [
+              {
+                "name": "candidate_id",
+                "value": "",
+                "type": "path",
+                "description": "A candidate identifier (e.g., P00000001)."
+              }
+            ]
+          },
+          "docs": "Retrieve a single candidate"
+        },
+        {
+          "info": {
+            "name": "Candidate financial totals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/candidate/:candidate_id/totals/",
+            "params": [
+              {
+                "name": "candidate_id",
+                "value": "",
+                "type": "path",
+                "description": "A candidate identifier (e.g., P00000001)."
+              },
+              {
+                "name": "cycle",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Candidate financial totals"
+        },
+        {
+          "info": {
+            "name": "Committees associated with a candidate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/candidate/:candidate_id/committees/",
+            "params": [
+              {
+                "name": "candidate_id",
+                "value": "",
+                "type": "path",
+                "description": "A candidate identifier (e.g., P00000001)."
+              }
+            ]
+          },
+          "docs": "Committees associated with a candidate"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

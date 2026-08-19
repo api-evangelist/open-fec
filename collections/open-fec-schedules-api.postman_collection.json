@@ -1,0 +1,355 @@
+{
+  "item": [
+    {
+      "id": "d3af9aae-5e90-4632-b15f-47dfb082bca7",
+      "name": "Schedules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df87a145-a76c-482e-9dec-185905b34ff7",
+          "name": "Itemized individual contributions (Schedule A)",
+          "request": {
+            "name": "Itemized individual contributions (Schedule A)",
+            "description": {},
+            "url": {
+              "path": [
+                "schedules",
+                "schedule_a",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "20",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "contributor_name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "two_year_transaction_period",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4268d28c-b449-4f60-997c-df9895199721",
+              "name": "Schedule A contribution records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schedules",
+                    "schedule_a",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "contributor_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "committee_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "committee_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "two_year_transaction_period",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5342139f-97ff-4bb1-9cd6-2dded9a4a6b5",
+          "name": "Itemized disbursements (Schedule B)",
+          "request": {
+            "name": "Itemized disbursements (Schedule B)",
+            "description": {},
+            "url": {
+              "path": [
+                "schedules",
+                "schedule_b",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "20",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "recipient_name",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1cf37fa-77c2-4d9b-88ca-dc3f45cc26a6",
+              "name": "Schedule B disbursement records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schedules",
+                    "schedule_b",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "committee_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "committee_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "recipient_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46c67ff6-851c-43ea-977e-ea790c640c7b",
+          "name": "Independent expenditures (Schedule E)",
+          "request": {
+            "name": "Independent expenditures (Schedule E)",
+            "description": {},
+            "url": {
+              "path": [
+                "schedules",
+                "schedule_e",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "20",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "candidate_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "candidate_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42075c24-56e0-4f16-9d89-1a272b56acf5",
+              "name": "Schedule E expenditure records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schedules",
+                    "schedule_e",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "candidate_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "candidate_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.open.fec.gov/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "22d9d52f-edc3-42ae-896d-3c8487e918b1",
+    "name": "OpenFEC Candidate Schedules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.\n\nContact Support:\n Name: Federal Election Commission",
+      "type": "text/plain"
+    }
+  }
+}

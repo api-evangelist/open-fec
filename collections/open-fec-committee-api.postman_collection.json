@@ -1,0 +1,209 @@
+{
+  "item": [
+    {
+      "id": "81a92605-34d7-4205-97b9-a11782090187",
+      "name": "Committee",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a3afdb99-072c-4bf8-85cc-bfe6bcfa03eb",
+          "name": "Retrieve a single committee",
+          "request": {
+            "name": "Retrieve a single committee",
+            "description": {},
+            "url": {
+              "path": [
+                "committee",
+                ":committee_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "committee_id",
+                  "description": "(Required) A committee identifier (e.g., C00000000)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ad4875b-e82b-47df-a702-4cd0fa12c552",
+              "name": "A committee record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "committee",
+                    ":committee_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "committee_id",
+                      "description": "(Required) A committee identifier (e.g., C00000000)."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "40719080-6d83-4f67-91fd-ffffa6bac7b2",
+          "name": "Committee financial totals",
+          "request": {
+            "name": "Committee financial totals",
+            "description": {},
+            "url": {
+              "path": [
+                "committee",
+                ":committee_id",
+                "totals",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "committee_id",
+                  "description": "(Required) A committee identifier (e.g., C00000000)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3505e372-5349-4d80-9288-c44a20b91a7b",
+              "name": "Aggregated committee finances by cycle.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "committee",
+                    ":committee_id",
+                    "totals",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "committee_id",
+                      "description": "(Required) A committee identifier (e.g., C00000000)."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.open.fec.gov/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "26150b90-9fea-4242-bb0f-7e75b6378247",
+    "name": "OpenFEC Candidate Committee API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.\n\nContact Support:\n Name: Federal Election Commission",
+      "type": "text/plain"
+    }
+  }
+}

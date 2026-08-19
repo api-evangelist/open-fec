@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenFEC Candidate Candidates API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Candidates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List candidates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/candidates/",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Full-text search."
+              },
+              {
+                "name": "candidate_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cycle",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "office",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "party",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Fetch basic information about candidates and ability to filter through results."
+        },
+        {
+          "info": {
+            "name": "Search candidates with principal committees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/candidates/search/",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search candidates with principal committees"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

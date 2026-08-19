@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenFEC Candidate Committees API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Committees",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List committees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/committees/",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number to return."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "committee_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "committee_type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cycle",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List committees"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

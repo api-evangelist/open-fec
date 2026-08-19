@@ -1,0 +1,186 @@
+{
+  "item": [
+    {
+      "id": "a294d9d6-0a3e-40fb-addc-ad7f549bb99a",
+      "name": "Committees",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "579e0a0b-e236-4d54-bda2-0b1dac27fef7",
+          "name": "List committees",
+          "request": {
+            "name": "List committees",
+            "description": {},
+            "url": {
+              "path": [
+                "committees",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "20",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "committee_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "committee_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cycle",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d1a58751-fb43-4a82-aa9d-c30846f97eaf",
+              "name": "A page of committee records.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "committees",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "20"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "committee_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "committee_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "committee_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cycle",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "cycle",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.open.fec.gov/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "af65f25e-07dd-40d4-be3b-6b441efe9ac4",
+    "name": "OpenFEC Candidate Committees API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.\n\nContact Support:\n Name: Federal Election Commission",
+      "type": "text/plain"
+    }
+  }
+}

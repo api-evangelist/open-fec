@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenFEC Candidate Elections API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Elections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Election summaries by office, cycle, and district",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/elections/",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "cycle",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "office",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "district",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Election summaries by office, cycle, and district"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

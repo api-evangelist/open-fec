@@ -1,0 +1,310 @@
+{
+  "item": [
+    {
+      "id": "82a1efe9-119e-4c4d-bb37-e6c11f46a713",
+      "name": "Candidate",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ba18315a-421b-4b35-b051-2cdcded758ab",
+          "name": "Retrieve a single candidate",
+          "request": {
+            "name": "Retrieve a single candidate",
+            "description": {},
+            "url": {
+              "path": [
+                "candidate",
+                ":candidate_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "candidate_id",
+                  "description": "(Required) A candidate identifier (e.g., P00000001)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "099ef3f9-fc9f-46a0-85d9-562d64eac335",
+              "name": "A candidate record.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "candidate",
+                    ":candidate_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "candidate_id",
+                      "description": "(Required) A candidate identifier (e.g., P00000001)."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea440306-005d-4f72-8eed-8f88c55fbd28",
+          "name": "Candidate financial totals",
+          "request": {
+            "name": "Candidate financial totals",
+            "description": {},
+            "url": {
+              "path": [
+                "candidate",
+                ":candidate_id",
+                "totals",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cycle",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cycle",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "candidate_id",
+                  "description": "(Required) A candidate identifier (e.g., P00000001)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff4f61ca-faa7-4a79-9fe4-68391861dee4",
+              "name": "Aggregated receipts, disbursements, and cash on hand.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "candidate",
+                    ":candidate_id",
+                    "totals",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cycle",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "cycle",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "candidate_id",
+                      "description": "(Required) A candidate identifier (e.g., P00000001)."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d6032195-af0f-4f91-99c1-732907d53c41",
+          "name": "Committees associated with a candidate",
+          "request": {
+            "name": "Committees associated with a candidate",
+            "description": {},
+            "url": {
+              "path": [
+                "candidate",
+                ":candidate_id",
+                "committees",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "candidate_id",
+                  "description": "(Required) A candidate identifier (e.g., P00000001)."
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a3da411-02bf-4778-8bde-f65982147f02",
+              "name": "Committee records linked to the candidate.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "candidate",
+                    ":candidate_id",
+                    "committees",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "candidate_id",
+                      "description": "(Required) A candidate identifier (e.g., P00000001)."
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.open.fec.gov/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "95384886-48fc-4f89-981e-648dbaec9fab",
+    "name": "OpenFEC Candidate API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The OpenFEC API is a RESTful web service from the Federal Election Commission supporting full-text and field-specific searches on FEC data including candidates, committees, filings, financial summaries, and transaction schedules. Data are updated nightly.\n\nContact Support:\n Name: Federal Election Commission",
+      "type": "text/plain"
+    }
+  }
+}

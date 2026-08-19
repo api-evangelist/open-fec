@@ -1,0 +1,113 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OpenFEC Candidate Schedules API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Schedules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Itemized individual contributions (Schedule A)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/schedules/schedule_a/",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "contributor_name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "committee_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "two_year_transaction_period",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Itemized individual contributions (Schedule A)"
+        },
+        {
+          "info": {
+            "name": "Itemized disbursements (Schedule B)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/schedules/schedule_b/",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "committee_id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "recipient_name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Itemized disbursements (Schedule B)"
+        },
+        {
+          "info": {
+            "name": "Independent expenditures (Schedule E)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.open.fec.gov/v1/schedules/schedule_e/",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "candidate_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Independent expenditures (Schedule E)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
