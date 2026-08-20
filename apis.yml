@@ -60,6 +60,8 @@ apis:
   humanURL: https://api.open.fec.gov/developers/
   baseURL: https://api.open.fec.gov/v1
   tags:
+  - committee
+  tags_raw:
   - Committee
   properties:
   - type: OpenAPI
@@ -108,6 +110,8 @@ apis:
   humanURL: https://api.open.fec.gov/developers/
   baseURL: https://api.open.fec.gov/v1
   tags:
+  - Name
+  tags_raw:
   - Names
   properties:
   - type: OpenAPI
