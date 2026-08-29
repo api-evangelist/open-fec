@@ -142,6 +142,9 @@ apis:
   - type: Documentation
     url: https://api.open.fec.gov/developers/
 common:
+  - type: CapabilityMap
+    url: capabilities/open-fec-capability-edges.yml
+    name: OpenFEC Business Capability Map
   - type: AgenticAccess
     url: agentic-access/open-fec-agentic-access.yml
   - type: DomainSecurity

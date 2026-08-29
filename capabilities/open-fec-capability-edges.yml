@@ -1,0 +1,65 @@
+slug: open-fec
+provider: OpenFEC
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Public Sector & Government
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Schedules
+  spec_file: open-fec-schedules-api-openapi.yml
+  capability_id: BC-3330.70
+  capability_id_l1: BC-3330
+  capability_name: Campaign Finance Disclosure
+  confidence: 0.88
+  evidence: GET /schedules/schedule_a/ 'Itemized individual contributions (Schedule A)'; 'Itemized disbursements
+    (Schedule B)'; 'Independent expenditures (Schedule E)'
+  reason: 'The operations expose FEC-filed itemised contribution, disbursement and independent-expenditure
+    records — the substance of campaign-finance donation and expenditure disclosure, which is exactly
+    BC-3330.70. Not generic accounting: the data are statutory election-committee disclosure schedules.'
+- tag: Committee
+  spec_file: open-fec-committee-api-openapi.yml
+  capability_id: BC-3330.70
+  capability_id_l1: BC-3330
+  capability_name: Campaign Finance Disclosure
+  confidence: 0.75
+  evidence: GET /committee/{committee_id}/totals/ getCommitteeTotals 'Committee financial totals'
+  reason: Political committee records with financial totals map directly to 'Registration of political
+    committees, donation and expenditure disclosure' under Campaign Finance Disclosure.
+- tag: Filings
+  spec_file: open-fec-filings-api-openapi.yml
+  capability_id: BC-3330.70
+  capability_id_l1: BC-3330
+  capability_name: Campaign Finance Disclosure
+  confidence: 0.75
+  evidence: GET /filings/ listFilings 'List filings'; 'Information is tied to the underlying forms by
+    file ID and image ID'
+  reason: FEC filings are the statutory campaign-finance reports submitted by candidates and committees,
+    matching donation and expenditure disclosure.
+- tag: Candidate
+  spec_file: open-fec-candidate-api-openapi.yml
+  capability_id: BC-3330.70
+  capability_id_l1: BC-3330
+  capability_name: Campaign Finance Disclosure
+  confidence: 0.7
+  evidence: GET /candidate/{candidate_id}/totals/ getCandidateTotals 'Candidate financial totals'
+  reason: FEC candidate records with financial totals and associated committees are campaign-finance disclosure
+    data held by the electoral regulator. Some ambiguity with Candidate and Party Registration (BC-3330.30),
+    since candidate records also derive from statements of candidacy.
+- tag: Committees
+  spec_file: open-fec-committees-api-openapi.yml
+  capability_id: BC-3330.70
+  capability_id_l1: BC-3330
+  capability_name: Campaign Finance Disclosure
+  confidence: 0.7
+  evidence: 'GET /committees/ listCommittees ''List committees''; description: ''FEC data including candidates,
+    committees, filings, financial summaries'''
+  reason: Listing of registered political committees held by the FEC is part of campaign-finance registration
+    and disclosure; the bare list operation gives slightly thinner evidence.
