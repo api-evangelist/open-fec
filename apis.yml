@@ -71,7 +71,7 @@ apis:
   humanURL: https://api.open.fec.gov/developers/
   baseURL: https://api.open.fec.gov/v1
   tags:
-  - committee
+  - Committee
   tags_raw:
   - Committee
   properties:
@@ -121,7 +121,7 @@ apis:
   humanURL: https://api.open.fec.gov/developers/
   baseURL: https://api.open.fec.gov/v1
   tags:
-  - Name
+  - Names
   tags_raw:
   - Names
   properties:
