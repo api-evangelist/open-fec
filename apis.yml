@@ -136,6 +136,8 @@ apis:
   humanURL: https://api.open.fec.gov/developers/
   baseURL: https://api.open.fec.gov/v1
   tags:
+  - Schedule
+  tags_raw:
   - Schedules
   properties:
   - type: OpenAPI
