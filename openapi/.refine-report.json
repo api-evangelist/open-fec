@@ -1,14 +1,7 @@
 {
   "provider": "open-fec",
   "sources": [
-    "open-fec-candidate-api-openapi.yml",
-    "open-fec-candidates-api-openapi.yml",
-    "open-fec-committee-api-openapi.yml",
-    "open-fec-committees-api-openapi.yml",
-    "open-fec-elections-api-openapi.yml",
-    "open-fec-filings-api-openapi.yml",
-    "open-fec-names-api-openapi.yml",
-    "open-fec-schedules-api-openapi.yml"
+    "_original/open-fec-openapi.yml"
   ],
   "outputs": [
     "open-fec-candidate-api-openapi.yml",
@@ -23,6 +16,42 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "open-fec-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "open-fec-openapi.yml: tagged paths GET /candidates/ -> Candidates",
+    "open-fec-openapi.yml: tagged paths GET /candidates/search/ -> Candidates",
+    "open-fec-openapi.yml: tagged paths GET /candidate/{candidate_id} -> Candidate",
+    "open-fec-openapi.yml: tagged paths GET /candidate/{candidate_id}/totals/ -> Candidate",
+    "open-fec-openapi.yml: tagged paths GET /candidate/{candidate_id}/committees/ -> Candidate",
+    "open-fec-openapi.yml: tagged paths GET /committees/ -> Committees",
+    "open-fec-openapi.yml: tagged paths GET /committee/{committee_id} -> Committee",
+    "open-fec-openapi.yml: tagged paths GET /committee/{committee_id}/totals/ -> Committee",
+    "open-fec-openapi.yml: tagged paths GET /filings/ -> Filings",
+    "open-fec-openapi.yml: tagged paths GET /schedules/schedule_a/ -> Schedules",
+    "open-fec-openapi.yml: tagged paths GET /schedules/schedule_b/ -> Schedules",
+    "open-fec-openapi.yml: tagged paths GET /schedules/schedule_e/ -> Schedules",
+    "open-fec-openapi.yml: tagged paths GET /elections/ -> Elections",
+    "open-fec-openapi.yml: tagged paths GET /names/candidates/ -> Names",
+    "open-fec-openapi.yml: tagged paths GET /names/committees/ -> Names",
+    "open-fec-openapi.yml: declared missing tag: Candidate",
+    "open-fec-openapi.yml: declared missing tag: Candidates",
+    "open-fec-openapi.yml: declared missing tag: Committee",
+    "open-fec-openapi.yml: declared missing tag: Committees",
+    "open-fec-openapi.yml: declared missing tag: Elections",
+    "open-fec-openapi.yml: declared missing tag: Filings",
+    "open-fec-openapi.yml: declared missing tag: Names",
+    "open-fec-openapi.yml: declared missing tag: Schedules",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "open-fec-candidate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "open-fec-candidates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "open-fec-committee-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "open-fec-committees-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "open-fec-elections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "open-fec-filings-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "open-fec-names-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "open-fec-schedules-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
