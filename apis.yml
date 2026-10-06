@@ -39,7 +39,7 @@ tags:
   - Government
 url: https://raw.githubusercontent.com/api-evangelist/open-fec/refs/heads/main/apis.yml
 created: '2024-03-30'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: open-fec:open-fec-candidate-api
@@ -145,6 +145,8 @@ apis:
   - type: Documentation
     url: https://api.open.fec.gov/developers/
 common:
+  - url: https://www.fec.gov/updates/
+    type: Blog
   - type: CapabilityMap
     url: capabilities/open-fec-capability-edges.yml
     name: OpenFEC Business Capability Map
