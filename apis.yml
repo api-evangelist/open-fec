@@ -145,6 +145,12 @@ apis:
   - type: Documentation
     url: https://api.open.fec.gov/developers/
 common:
+  - type: Plans
+    url: plans/open-fec-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/open-fec-rate-limits.yml
+  - type: FinOps
+    url: finops/open-fec-finops.yml
   - url: https://www.fec.gov/updates/
     type: Blog
   - type: CapabilityMap
